@@ -1,0 +1,18 @@
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_45).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Egor"
+name: String = Egor
+
+scala> val helloWords = Seq("Hello", "Hola", "Guten tag")
+helloWords: Seq[String] = List(Hello, Hola, Guten tag)
+
+scala> helloWords.foreach(helloWord => println(s"$helloWord Scala! This is $name"))
+Hello Scala! This is Egor
+Hola Scala! This is Egor
+Guten tag Scala! This is Egor
+
+scala> helloWords.foreach(helloWord => println(s"$helloWord Scala! This is ${name.reverse}"))
+Hello Scala! This is rogE
+Hola Scala! This is rogE
+Guten tag Scala! This is rogE
