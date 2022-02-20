@@ -1,0 +1,24 @@
+"C:\Program Files\Java\jdk-11.0.14\bin\java.exe" -Djline.terminal=NONE "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\lib\idea_rt.jar=50299:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Franz\IdeaProjects\HelloWorld\out\production\HelloWorld;C:\Users\Franz\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.8.jar;C:\Users\Franz\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.13.8.jar;C:\Users\Franz\.ivy2\cache\org.scala-lang\scala-compiler\jars\scala-compiler-2.13.8.jar;C:\Users\Franz\.ivy2\cache\org.jline\jline\jars\jline-3.21.0.jar;C:\Users\Franz\.ivy2\cache\net.java.dev.jna\jna\jars\jna-5.9.0.jar;C:\Users\Franz\AppData\Roaming\JetBrains\IdeaIC2021.3\plugins\Scala\lib\runners.jar scala.tools.nsc.MainGenericRunner -usejavacp -Xjline:off
+Welcome to Scala 2.13.8 (Java HotSpot(TM) 64-Bit Server VM, Java 11.0.14).
+Type in expressions for evaluation. Or try :help.
+
+scala> val manyTimesGreet = (greetings: Array[String], name: String) => for (greeting <- greetings.iterator) println(s"$greeting Scala! This is $name")
+val manyTimesGreet: (Array[String], String) => Unit = $Lambda$920/0x00000001006d6840@5c8ab9de
+
+scala> val greetings = Array("Hello", "Guten Morgen", "Guten Tag", "Guten Abend")
+val greetings: Array[String] = Array(Hello, Guten Morgen, Guten Tag, Guten Abend)
+
+scala> val myName = "Maxim Francevich"
+val myName: String = Maxim Francevich
+
+scala> manyTimesGreet(greetings, myName)
+Hello Scala! This is Maxim Francevich
+Guten Morgen Scala! This is Maxim Francevich
+Guten Tag Scala! This is Maxim Francevich
+Guten Abend Scala! This is Maxim Francevich
+
+scala> manyTimesGreet(greetings, myName.reverse)
+Hello Scala! This is hcivecnarF mixaM
+Guten Morgen Scala! This is hcivecnarF mixaM
+Guten Tag Scala! This is hcivecnarF mixaM
+Guten Abend Scala! This is hcivecnarF mixaM
