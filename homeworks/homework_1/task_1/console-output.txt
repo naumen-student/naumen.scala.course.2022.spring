@@ -1,0 +1,45 @@
+C:\Users\ching>scala
+Welcome to Scala 3.1.1 (1.8.0_302, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> val mainString: String = " Scala! This is "
+val mainString: String = " Scala! This is "
+
+scala> var greetings: String = "Hello"
+var greetings: String = Hello
+
+scala> var name: String = "Chingis Tulenov"
+var name: String = Chingis Tulenov
+
+scala> println(greetings + mainString + name)
+Hello Scala! This is Chingis Tulenov
+
+scala> greetings = "Hola"
+greetings: String = Hola
+
+scala> println(greetings + mainString + name)
+Hola Scala! This is Chingis Tulenov
+
+scala> greetings = "Guten tag"
+greetings: String = Guten tag
+
+scala> println(greetings + mainString + name)
+Guten tag Scala! This is Chingis Tulenov
+
+scala> name = name.reverse
+name: String = voneluT signihC
+
+scala> println(greetings + mainString + name)
+Guten tag Scala! This is voneluT signihC
+
+scala> greetings = "Hola"
+greetings: String = Hola
+
+scala> println(greetings + mainString + name)
+Hola Scala! This is voneluT signihC
+
+scala> greetings = "Hello"
+greetings: String = Hello
+
+scala> println(greetings + mainString + name)
+Hello Scala! This is voneluT signihC
