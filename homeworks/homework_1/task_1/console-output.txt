@@ -1,0 +1,16 @@
+def Print(value: String): Unit
+
+
+
+def ReverseName(input: String): String
+
+
+
+def GetHelloStatement(welcomeStatement: String, name: String): String
+
+
+
+var welcomeStatement: String = Hi
+var name: String = Mikhail Barabanov
+
+Hi Mikhail Barabanov
