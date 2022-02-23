@@ -1,0 +1,24 @@
+[naumen.scala.course.2022.spring] amm                                                                                               
+Loading...
+Welcome to the Ammonite Repl 2.5.2 (Scala 2.13.8 Java 16.0.2)
+@ val name: String = "Stepan Khudyakov"
+name: String = "Stepan Khudyakov"
+
+@ val greetings: Array[String] = Array("Hello", "Hola", "Guten tag")
+greetings: Array[String] = Array("Hello", "Hola", "Guten tag")
+
+@ def printGreeting(greeting: String, name: String): Unit = println(s"$greeting Scala! This is $name")
+defined function printGreeting
+
+@ greetings.foreach((greet: String) => printGreeting(greet, name))
+Hello Scala! This is Stepan Khudyakov
+Hola Scala! This is Stepan Khudyakov
+Guten tag Scala! This is Stepan Khudyakov
+
+
+@ greetings.foreach((greet: String) => printGreeting(greet, name.reverse))
+Hello Scala! This is vokayduhK napetS
+Hola Scala! This is vokayduhK napetS
+Guten tag Scala! This is vokayduhK napetS
+
+
