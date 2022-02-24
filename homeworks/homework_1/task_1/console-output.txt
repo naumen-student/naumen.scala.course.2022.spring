@@ -1,0 +1,41 @@
+C:\Users\rusla>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) Client VM, Java 1.8.0_321).
+Type in expressions for evaluation. Or try :help.
+
+scala> def say_hello(greetings: String, name: String) = println(s"$greetings Scala! This is $name")
+say_hello: (greetings: String, name: String)Unit
+
+scala> val eng_greetings = "Hello"
+eng_greetings: String = Hello
+
+scala> val name = "Ruslan Vlasenko"
+name: String = Ruslan Vlasenko
+
+scala> say_hello(eng_greetings, name)
+Hello Scala! This is Ruslan Vlasenko
+
+scala> val spa_greetings = "Hola"
+spa_greetings: String = Hola
+
+scala> val deu_greetings = "Guten tag"
+deu_greetings: String = Guten tag
+
+scala> say_hello(spa_greetings, name)
+Hola Scala! This is Ruslan Vlasenko
+
+scala> say_hello(deu_greetings, name)
+Guten tag Scala! This is Ruslan Vlasenko
+
+scala> val reversed_name = name.reverse
+reversed_name: String = oknesalV nalsuR
+
+scala> say_hello(eng_greetings, reversed_name)
+Hello Scala! This is oknesalV nalsuR
+
+scala> say_hello(spa_greetings, reversed_name)
+Hola Scala! This is oknesalV nalsuR
+
+scala> say_hello(deu_greetings, reversed_name)
+Guten tag Scala! This is oknesalV nalsuR
+
+scala>
