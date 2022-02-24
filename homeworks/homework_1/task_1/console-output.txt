@@ -1,0 +1,35 @@
+Microsoft Windows [Version 10.0.19043.1526]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Anna Zyabliceva>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_311).
+Type in expressions for evaluation. Or try :help.
+
+scala> def get_greetings_text(greetings: String, name: String) = println(s"$greetings Scala! This is $name")
+get_greetings_text: (greetings: String, name: String)Unit
+
+scala> val name = "Anna Ziablitseva"
+name: String = Anna Ziablitseva
+
+scala> get_greetings_text("Hello", name)
+Hello Scala! This is Anna Ziablitseva
+
+scala> get_greetings_text("Hola", name)
+Hola Scala! This is Anna Ziablitseva
+
+scala> get_greetings_text("Guten tag", name)
+Guten tag Scala! This is Anna Ziablitseva
+
+scala> val reverse_name = name.reverse
+reverse_name: String = avestilbaiZ annA
+
+scala> get_greetings_text("Hello", reverse_name)
+Hello Scala! This is avestilbaiZ annA
+
+scala> get_greetings_text("Hola", reverse_name)
+Hola Scala! This is avestilbaiZ annA
+
+scala> get_greetings_text("Guten tag", reverse_name)
+Guten tag Scala! This is avestilbaiZ annA
+
+scala>
