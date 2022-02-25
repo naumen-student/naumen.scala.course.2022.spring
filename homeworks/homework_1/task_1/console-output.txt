@@ -1,0 +1,50 @@
+C:\Users\Oleg>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.14.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Oleg Gubanov")
+Hello Scala! This is Oleg Gubanov
+
+scala> var greeting = "Hello Scala! This is Oleg Gubanov"
+greeting: String = Hello Scala! This is Oleg Gubanov
+
+scala> println(greeting)
+Hello Scala! This is Oleg Gubanov
+
+scala> var a = "Hello Scala!"
+a: String = Hello Scala!
+
+scala> var b = " This is Oleg Gubanov"
+b: String = " This is Oleg Gubanov"
+
+scala> println(a + b)
+Hello Scala! This is Oleg Gubanov
+
+scala> def greet(greeting: String, name: String): Unit = { println(s"$greeting Scala! This is $name") }
+greet: (greeting: String, name: String)Unit
+
+scala> val name = "Oleg Gubanov"
+name: String = Oleg Gubanov
+
+scala> greet("Hola", name)
+Hola Scala! This is Oleg Gubanov
+
+scala> greet("Guten tag", name)
+Guten tag Scala! This is Oleg Gubanov
+
+scala> val greet = (greeting: String, name: String) => println(s"$greeting Scala! This is $name")
+greet: (String, String) => Unit = $$Lambda$1099/0x000000010078a040@73b034ca
+
+scala> val name_reverse = name.reverse
+name_reverse: String = vonabuG gelO
+
+scala> greet("Hello", name_reverse)
+Hello Scala! This is vonabuG gelO
+
+scala> greet("Hola", name_reverse)
+Hola Scala! This is vonabuG gelO
+
+scala> greet("Guten tag", name_reverse)
+Guten tag Scala! This is vonabuG gelO
+
+scala>
