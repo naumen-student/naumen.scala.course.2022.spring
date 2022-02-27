@@ -1,0 +1,30 @@
+C:\Users\denis>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_271).
+Type in expressions for evaluation. Or try :help.
+
+scala> def sayHello(
+     |     helloWord: String = "Hello",
+     |     changeUserName: String => String = (s) => s) = {
+     |   val name = System.getProperty("user.name")
+     |   val helloPhrase = helloWord + " Scala! This is " + changeUserName(name)
+     |   println(helloPhrase)
+     | }
+sayHello: (helloWord: String, changeUserName: String => String)Unit
+
+scala> sayHello()
+Hello Scala! This is denis
+
+scala> sayHello("Guten tag")
+Guten tag Scala! This is denis
+
+scala> val reverse = (s: String) => (for(i <- s.length - 1 to 0 by -1) yield s(i)).mkString
+reverse: String => String = $$Lambda$1174/510441778@6e090aaa
+
+scala> reverse("test string")
+res2: String = gnirts tset
+
+scala> sayHello(changeUserName = reverse)
+Hello Scala! This is sined
+
+scala> sayHello("Hola", reverse)
+Hola Scala! This is sined
