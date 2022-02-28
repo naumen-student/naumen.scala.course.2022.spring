@@ -1,0 +1,36 @@
+C:\Users\Hatsune Miku>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_51).
+Type in expressions for evaluation. Or try :help.
+
+scala> var hello = "Hello"
+hello: String = Hello
+
+scala> var phrase = " Scala! This is "
+phrase: String = " Scala! This is "
+
+scala> var name = "Vadim Yun"
+name: String = Vadim Yun
+
+scala> println(hello+phrase+name)
+Hello Scala! This is Vadim Yun
+
+scala> println(hello+phrase+name.reverse)
+Hello Scala! This is nuY midaV
+
+scala> hello="Guten tag"
+hello: String = Guten tag
+
+scala> println(hello+phrase+name)
+Guten tag Scala! This is Vadim Yun
+
+scala> println(hello+phrase+name.reverse)
+Guten tag Scala! This is nuY midaV
+
+scala> hello="Hola"
+hello: String = Hola
+
+scala> println(hello+phrase+name)
+Hola Scala! This is Vadim Yun
+
+scala> println(hello+phrase+name.reverse)
+Hola Scala! This is nuY midaV
