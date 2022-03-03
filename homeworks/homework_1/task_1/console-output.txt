@@ -1,0 +1,33 @@
+C:\Users\Danil>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.14).
+Type in expressions for evaluation. Or try :help.
+
+scala> def greet(greeting: String, name: String): Unit = println(s"$greeting Scala! This is $name")
+greet: (greeting: String, name: String)Unit
+
+scala> def greetMe(greeting: String): Unit = greet(greeting, "Danil Lunev")
+greetMe: (greeting: String)Unit
+
+scala> def greetWithReversedName(greeting: String, name: String): Unit = greet(greeting, name.reverse)
+greetWithReversedName: (greeting: String, name: String)Unit
+
+scala> def greetMeReversed(greeting: String): Unit = greetWithReversedName(greeting, "Danil Lunev")
+greetMeReversed: (greeting: String)Unit
+
+scala> greetMe("Hello")
+Hello Scala! This is Danil Lunev
+
+scala> greetMe("Hola")
+Hola Scala! This is Danil Lunev
+
+scala> greetMe("Guten tag")
+Guten tag Scala! This is Danil Lunev
+
+scala> greetMeReversed("Hello")
+Hello Scala! This is venuL linaD
+
+scala> greetMeReversed("Hola")
+Hola Scala! This is venuL linaD
+
+scala> greetMeReversed("Guten tag")
+Guten tag Scala! This is venuL linaD
