@@ -1,0 +1,50 @@
+C:\Users\1>scala
+Welcome to Scala 3.1.1 (16.0.2, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> import scala.io.StdIn.readLine
+
+scala> val yourName = readLine()
+val yourName: String = Ksenia Khomutova
+
+scala> println(s"Hello Scala! This is ${yourName}")
+Hello Scala! This is Ksenia Khomutova
+
+scala> var hello = "Hola"
+var hello: String = Hola
+
+scala> println(s"${hello} Scala! This is ${yourName}")
+Hola Scala! This is Ksenia Khomutova
+
+scala> hello = "Guten tag"
+hello: String = Guten tag
+
+scala> println(s"${hello} Scala! This is ${yourName}")
+Guten tag Scala! This is Ksenia Khomutova
+
+scala> println(s"${hello} Scala! This is ${yourName.reverse}")
+Guten tag Scala! This is wvotumohK ainesK                      // почему-то последнюю букву в исходном слове неверно распознает
+
+scala> val yourName = readLine()
+val yourName: String = Ksenia
+
+scala> println(s"${hello} Scala! This is ${yourName.reverse}")
+Guten tag Scala! This is ainesR                                // а здесь первую букву в исходном слове, очень странно...
+
+scala> val yourName = readLine()
+val yourName: String = Ksenia Khomutova
+
+scala> hello = "Hola"
+hello: String = Hola
+
+scala> println(s"${hello} Scala! This is ${yourName.reverse}")
+Hola Scala! This is wvotumohK ainesK
+
+scala> val reverseName = yourName.reverse
+val reverseName: String = wvotumohK ainesK
+
+scala> hello = "Hello"
+hello: String = Hello
+
+scala> println(s"${hello} Scala! This is ${yourName.reverse}")
+Hello Scala! This is wvotumohK ainesK
