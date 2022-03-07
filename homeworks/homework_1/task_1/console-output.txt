@@ -1,0 +1,44 @@
+Microsoft Windows [Version 10.0.19043.1526]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Terentii>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 17.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> val greeting = "Hello Scala! This is Terentii"
+greeting: String = Hello Scala! This is Terentii
+
+scala> println(greeting)
+Hello Scala! This is Terentii
+
+scala> val greetingHola = "Hola Skala! This is Terentii"
+greetingHola: String = Hola Skala! This is Terentii
+
+scala> println(greetingHola)
+Hola Skala! This is Terentii
+
+scala> val greetingRu = "Zdarova Skala! This is Terentii"
+greetingRu: String = Zdarova Skala! This is Terentii
+
+scala> println(greetingRu)
+Zdarova Skala! This is Terentii
+
+scala> val greetingReversed = "Hello Scala! This is iitnereT"
+greetingReversed: String = Hello Scala! This is iitnereT
+
+scala> println(greetingReversed)
+Hello Scala! This is iitnereT
+
+scala> val greetingHolaReversed = "Hola Scala! This is iitnereT"
+greetingHolaReversed: String = Hola Scala! This is iitnereT
+
+scala> println(greetingHolaReversed)
+Hola Scala! This is iitnereT
+
+scala> val greetingRuReversed = "Zdarova Scala! This is iitnereT"
+greetingRuReversed: String = Zdarova Scala! This is iitnereT
+
+scala> println(greetingRuReversed)
+Zdarova Scala! This is iitnereT
+
+scala>
