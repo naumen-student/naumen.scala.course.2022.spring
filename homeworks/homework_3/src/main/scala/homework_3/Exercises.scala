@@ -18,12 +18,14 @@ object Exercises {
         } else
             x.toString
 
-    def prettyBooleanFormatter3(x: Any): String = x match {
-        case TRUE => "правда"
-        case FALSE => "ложь"
-        case _ => x.toString
-    }
-
+    def prettyBooleanFormatter3(x: Any): String =
+        if (x.getClass == classOf[java.lang.Boolean])
+            if (x.asInstanceOf[Boolean])
+                "правда"
+            else
+                "ложь"
+        else
+         x.toString
 
     def max1(xs: Seq[Int]): Int =
         if (xs.isEmpty)
