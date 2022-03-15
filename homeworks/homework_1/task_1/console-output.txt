@@ -1,0 +1,38 @@
+@ println("Hello") 
+Hello
+
+@ println("Hello Scala! This is Ilya") 
+Hello Scala! This is Ilya
+
+@ val greet_1 = "Hello"
+greet_1: String = "Hello"
+
+@ val greet_2 = "Hola"
+greet_2: String = "Hola"
+
+@ val greet_3 = "Guten tag"
+greet_3: String = "Guten tag"
+
+@ print(greet_1 + " Scala! This is Ilya")
+Hello Scala! This is Ilya
+
+@ val name_1 = "Ilya Grebenyuk"
+name_1: String = "Ilya Grebenyuk"
+
+@ print(greet_1 + " Scala! This is " + name_1)
+Hello Scala! This is Ilya Grebenyuk
+
+@ val name_1_rvrs = name_1.reverse
+name_1_rvrs: String = "kuyneberG aylI"
+
+@ print(greet_1 + " Scala! This is " + name_1)
+Hello Scala! This is Ilya Grebenyuk
+
+@ print(greet_1 + " Scala! This is " + name_1_rvrs)
+Hello Scala! This is kuyneberG aylI
+
+@ print(greet_2 + " Scala! This is " + name_1_rvrs)
+Hola Scala! This is kuyneberG aylI
+
+@ print(greet_3 + " Scala! This is " + name_1_rvrs) 
+Guten tag Scala! This is kuyneberG aylI
