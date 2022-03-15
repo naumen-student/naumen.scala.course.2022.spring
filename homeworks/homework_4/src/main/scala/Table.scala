@@ -8,10 +8,9 @@ class Table(width: Int, height: Int) {
     def setCell(xi: Int, yi: Int, cell: Cell) : Unit = getIndex(xi, yi).foreach(cells.update(_, cell))
     
     private final def getIndex(xi: Int, yi: Int) : Option[Int] = for {
-        x <- ValidateSize(xi, width)
-        y <- ValidateSize(yi, height)
+        x <- validateSize(xi, width)
+        y <- validateSize(yi, height)
     } yield x + y * width
 
-    private final def ValidateSize(x: Int, max: Int): Option[Int] =
-        if (0 <= x && x < max) Some(x) else None
+    private final def validateSize(x: Int, max: Int): Option[Int] = if (0 <= x && x < max) Some(x) else None
 }
