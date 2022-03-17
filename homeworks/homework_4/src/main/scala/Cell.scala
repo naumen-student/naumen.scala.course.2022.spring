@@ -26,8 +26,8 @@ class ReferenceCell(ix: Int, iy: Int, table: Table) extends Cell {
     private def isCyclic: Boolean = {
         getReferencedCell match {
             case Some(cell: ReferenceCell) =>
-                if (cell.ix == ix && cell.iy == iy) true else false
-            case None => false
+                cell.ix == ix && cell.iy == iy
+            case _ => false
         }
     }
 }
