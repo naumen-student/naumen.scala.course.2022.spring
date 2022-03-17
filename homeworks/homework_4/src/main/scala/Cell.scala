@@ -1,32 +1,33 @@
+import scala.annotation.tailrec
+
 sealed trait Cell {
-    def toString: String
+  def toString: String
 }
 
 class EmptyCell extends Cell {
-    override def toString: String = "empty"
+  override def toString: String = "empty"
 }
 
 class NumberCell(val value: Int) extends Cell {
-    override def toString: String = value.toString
+  override def toString: String = value.toString
 }
 
 class StringCell(val value: String) extends Cell {
-    override def toString: String = value
+  override def toString: String = value
 }
 
 class ReferenceCell(ix: Int, iy: Int, table: Table) extends Cell {
-    
-    override def toString: String = {
-        getReferencedCell match {
-            case None => "outOfRange"
-            case Some(cell: ReferenceCell) if isCyclic(cell) => "cyclic"
-            case Some(cell) => cell.toString
-        }
-    }
+  override def toString: String = resolveReference(this, List.empty)
 
-    private def getReferencedCell: Option[Cell] = table.getCell(ix, iy)
+  private final def getReference: Option[Cell] = table.getCell(ix, iy)
 
-    private def isCyclic(referencedCell: ReferenceCell): Boolean = {
-        referencedCell.ix == ix && referencedCell.iy == iy
+  @tailrec
+  private final def resolveReference(cell: ReferenceCell, references: List[ReferenceCell]): String =
+    cell.getReference match {
+      case Some(x) => x match {
+        case y: ReferenceCell => if (references.contains(y)) "cyclic" else resolveReference(y, cell :: references)
+        case _ => x.toString
+      }
+      case None => "outOfRange"
     }
 }
