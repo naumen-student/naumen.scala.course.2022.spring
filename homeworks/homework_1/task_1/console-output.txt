@@ -1,0 +1,26 @@
+scala> def hello_pattern(hello:String, name:String):String = s"$hello Scala! This is $name"
+def hello_pattern(hello: String, name: String): String
+
+scala> val name = "Andrew Lazarev"
+val name: String = Andrew Lazarev
+
+scala> var hello_words = Array("Hello", "Guten Tag", "Hola")
+var hello_words: Array[String] = Array(Hello, Guten Tag, Hola)
+
+scala> print(hello_pattern(hello_words(0), name))
+Hello Scala! This is Andrew Lazarev
+
+scala> print(hello_pattern(hello_words(1), name))
+Guten Tag Scala! This is Andrew Lazarev
+
+scala> print(hello_pattern(hello_words(2), name))
+Hola Scala! This is Andrew Lazarev
+
+scala> print(hello_pattern(hello_words(0), name.reverse))
+Hello Scala! This is verazaL werdnA
+
+scala> print(hello_pattern(hello_words(1), name.reverse))
+Guten Tag Scala! This is verazaL werdnA
+
+scala> print(hello_pattern(hello_words(2), name.reverse))
+Hola Scala! This is verazaL werdnA
