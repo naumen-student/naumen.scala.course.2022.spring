@@ -12,22 +12,14 @@ class StringCell(val value: String) extends Cell {
     override def toString: String = value
 }
 
-class ReferenceCell(ix: Int, iy: Int, table: Table) extends Cell {
+class ReferenceCell(val ix: Int, val iy: Int, table: Table) extends Cell {
+
     override def toString: String = {
-        getReferencedCell match {
-            case Some(_) if isCyclic => "cyclic"
+        table.getCell(ix, iy) match {
+            case Some(cell: ReferenceCell) =>
+                if (table.getCell(cell.ix, cell.iy).get == this) "cyclic" else cell.toString
             case Some(cell) => cell.toString
             case None => "outOfRange"
-        }
-    }
-
-    private def getReferencedCell: Option[Cell] = table.getCell(ix, iy)
-
-    private def isCyclic: Boolean = {
-        getReferencedCell match {
-            case Some(cell: ReferenceCell) =>
-                cell.ix == ix && cell.iy == iy
-            case _ => false
         }
     }
 }
