@@ -1,0 +1,42 @@
+Welcome to Scala 2.13.8 (OpenJDK 64-Bit Server VM, Java 15.0.6).
+Type in expressions for evaluation. Or try :help.
+
+scala> import zio._
+import zio._
+
+scala> import cats.syntax.all._
+import cats.syntax.all._
+
+scala> def createHelloWorld(helloText: String, personText: String): String = helloText + " Scala! This is " + personText
+def createHelloWorld(helloText: String, personText: String): String
+
+scala> val person = "Vyacheslav"
+val person: String = Vyacheslav
+
+scala> val persons = person :: person.reverse :: Nil
+val persons: List[String] = List(Vyacheslav, valsehcayV)
+
+scala> val helloTexts = "Hello Scala! This is" :: "Hola" :: "Guten tag" :: Nil
+val helloTexts: List[String] = List(Hello Scala! This is, Hola, Guten tag)
+
+scala> val helloWorlds = for {
+   p <- persons
+   h <- helloTexts
+ } yield createHelloWorld(h, p)
+     |      |      | val helloWorlds: List[String] = List(Hello Scala! This is Scala! This is Vyacheslav, Hola Scala! This is Vyacheslav, Guten tag Scala! This is Vyacheslav, Hello Scala! This is Scala! This is valsehcayV, Hola Scala! This is valsehcayV, Guten tag Scala! This is valsehcayV)
+
+scala> val effect = helloWorlds.map(s => Console.printLine(s)).reduce((acc, i) => acc *> i)
+val effect: zio.ZIO[zio.Console,java.io.IOException,Unit] = <function1>
+
+scala> val runtime = Runtime.default
+val runtime: zio.Runtime[zio.ZEnv] = zio.Runtime$$anon$3@514f2b5c
+
+scala> runtime.unsafeRun(effect)
+Hello Scala! This is Scala! This is Vyacheslav
+Hola Scala! This is Vyacheslav
+Guten tag Scala! This is Vyacheslav
+Hello Scala! This is Scala! This is valsehcayV
+Hola Scala! This is valsehcayV
+Guten tag Scala! This is valsehcayV
+
+scala> 
