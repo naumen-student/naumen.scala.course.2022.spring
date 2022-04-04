@@ -7,17 +7,36 @@ object Exercises {
 
   case class Dog(override val name: String) extends Animal
 
+  case class Shelter[+A <: Animal](animals: List[A]) {
+    def +[B >: A <: Animal](animal: B): Shelter[B] = Shelter(animal :: animals)
+
+    def ++[B >: A <: Animal](anotherShelter: Shelter[B]): Shelter[B] = Shelter(animals ::: anotherShelter.animals)
+  }
+
+  implicit class ShelterOps[A <: Animal](shelter: Shelter[A]) {
+    def getNames: List[String] = shelter.animals.map(_.name)
+
+    def feed(food: Food[A]): List[String] = shelter.animals.map(x => food.feed(x))
+  }
 
 
-  case class Shelter ...
+  trait Food[-A <: Animal] {
+    def feed(animal: A): String
+  }
 
+  case object Meat extends Food[Animal] {
+    override def feed(animal: Animal): String = animal.eat("meat")
+  }
 
+  case object Milk extends Food[Cat] {
+    override def feed(cat: Cat): String = cat.eat("milk")
+  }
 
-  trait Food ...
+  case object Bread extends Food[Dog] {
+    override def feed(dog: Dog): String = dog.eat("bread")
+  }
 
-  case object Meat extends Food[Animal] ...
-
-  case object Milk extends Food[Cat] ...
-
-  case object Bread extends Food[Dog] ...
+  implicit class AnimalFeedSyntax(animal: Animal) {
+    def eat(foodName: String): String = s"${animal.name} eats $foodName"
+  }
 }
