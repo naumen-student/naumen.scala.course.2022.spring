@@ -26,9 +26,9 @@ object Exercises {
     .map(w => MORSE.getOrElse(w.toString.toUpperCase(), w))
     .mkString(" ")
 
-
+  val wordsRegexp = "([а-яА-Яa-zA-Z]+|[^а-яА-Яa-zA-Z])".r
   def wordReverse(text: String): String =
-    "([а-яА-Яa-zA-Z]+|[^а-яА-Яa-zA-Z])".r
+    wordsRegexp
       .findAllIn(text)
       .map {
         case word if word.head.isUpper => (word.head.toLower + word.tail).reverse.capitalize
