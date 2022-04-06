@@ -1,4 +1,5 @@
 object Exercises {
+
   trait Animal {
     def name: String
   }
@@ -8,44 +9,32 @@ object Exercises {
   case class Dog(override val name: String) extends Animal
 
 
-
   case class Shelter[+T <: Animal](animals: List[T]) {
 
-    def +[TOther >: T <: Animal](other: TOther): Shelter[TOther] = {
+    def +[TOther >: T <: Animal](other: TOther): Shelter[TOther] =
       Shelter(other :: animals)
-    }
 
-    def ++[TOther >: T <: Animal](otherShelter: Shelter[TOther]): Shelter[TOther] = {
+    def ++[TOther >: T <: Animal](otherShelter: Shelter[TOther]): Shelter[TOther] =
       Shelter(otherShelter.animals ++ animals)
-    }
 
-    def getNames: List[String] = {
+    def getNames: List[String] =
       animals.map(_.name)
-    }
 
-    def feed[TFood >: T <: Animal](food: Food[TFood]): List[String] ={
+    def feed(food: Food[T]): List[String] =
       animals.map(animal => food.feed(animal))
-    }
   }
 
 
+  trait Food[-T <: Animal] {
+    def foodName: String = this.getClass.getSimpleName.stripSuffix("$")
 
-  trait Food[T] {
-    def feed(animal: T): String
+    def feed(animal: T): String =
+      s"${animal.name} eats ${foodName.toLowerCase}"
   }
 
-  case object Meat extends Food[Animal] {
-    override def feed(animal: Animal): String =
-      s"${animal.name} eats meat"
-  }
+  case object Meat extends Food[Animal]
 
-  case object Milk extends Food[Cat] {
-    override def feed(animal: Cat): String =
-      s"${animal.name} eats milk"
-  }
+  case object Milk extends Food[Cat]
 
-  case object Bread extends Food[Dog] {
-    override def feed(animal: Dog): String =
-      s"${animal.name} eats bread"
-  }
+  case object Bread extends Food[Dog]
 }
