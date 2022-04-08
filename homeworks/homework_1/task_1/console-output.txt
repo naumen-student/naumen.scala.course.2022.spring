@@ -1,0 +1,33 @@
+C:\Users\capybara>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_51).
+Type in expressions for evaluation. Or try :help.
+
+scala> var hello = "Hello"
+hello: String = Hello
+
+scala> var middle = " Scala! This is "
+middle: String = " Scala! This is "
+
+scala> var name = "Alexander Epik"
+name: String = Alexander Epik
+
+scala> println(hello+middle+name)
+Hello Scala! This is Alexander Epik
+
+scala> hello="Guten tag"
+hello: String = Guten tag
+
+scala> println(hello+middle+name)
+Guten tag Scala! This is Alexander Epik
+
+scala> println(hello+middle+name.reverse)
+Guten tag Scala! This is kipE rednaxelA
+
+scala> hello="Hola"
+hello: String = Hola
+
+scala> println(hello+middle+name)
+Hola Scala! This is Alexander Epik
+
+scala> println(hello+middle+name.reverse)
+Hola Scala! This is kipE rednaxelA
