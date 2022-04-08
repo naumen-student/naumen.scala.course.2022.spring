@@ -1,3 +1,4 @@
+
 object Exercises {
   trait Animal {
     def name: String
@@ -9,25 +10,25 @@ object Exercises {
 
 
 
-  case class Shelter[+T <: Animal](animals: List[Animal]) {
-    def +[T2 <: Animal](animal: T2): Shelter[T2] = Shelter(animals :+ animal)
+  case class Shelter[+T <: Animal](animals: List[T]) {
+    def +[T2 >: T <: Animal](animal: T2): Shelter[T2] = Shelter(animals :+ animal)
 
-    def ++(shelter: Shelter[Animal]): Shelter[Animal] = Shelter(animals ++ shelter.animals)
+    def ++[T2 >: T <: Animal](shelter: Shelter[T2]): Shelter[T2] = Shelter(animals ++ shelter.animals)
 
     def getNames: List[String] = {
       animals.map(_.name)
     }
 
-    def feed(food: Food[Animal]): List[String] = {
+    def feed(food: Food[T]): List[String] = {
       animals.map(food.feed)
     }
   }
 
-  trait Food[+T <: Animal] {
+  trait Food[-T <: Animal] {
     private val name = this.getClass.getSimpleName.toLowerCase
     private val nameWithoutLastChar = name.substring(0, name.length - 1)
 
-    def feed(animal: Animal): String = {
+    def feed(animal: T): String = {
       s"${animal.name} eats $nameWithoutLastChar"
     }
   }
