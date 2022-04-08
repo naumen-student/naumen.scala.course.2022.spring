@@ -10,16 +10,16 @@ object Exercises {
 
 
 
-  case class Shelter[+T <: Animal](animals: List[T]) {
-    def +[T2 >: T <: Animal](animal: T2): Shelter[T2] = Shelter(animals :+ animal)
+  case class Shelter[+T1 <: Animal](animals: List[T1]) {
+    def +[T2 >: T1 <: Animal](animal: T2): Shelter[T2] = Shelter(animals :+ animal)
 
-    def ++[T2 >: T <: Animal](shelter: Shelter[T2]): Shelter[T2] = Shelter(animals ++ shelter.animals)
+    def ++[T2 >: T1 <: Animal](shelter: Shelter[T2]): Shelter[T2] = Shelter(animals ++ shelter.animals)
 
     def getNames: List[String] = {
       animals.map(_.name)
     }
 
-    def feed(food: Food[T]): List[String] = {
+    def feed(food: Food[T1]): List[String] = {
       animals.map(food.feed)
     }
   }
