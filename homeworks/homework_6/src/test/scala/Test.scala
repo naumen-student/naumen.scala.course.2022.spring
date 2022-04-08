@@ -20,11 +20,13 @@ object Test extends TestSuite{
     }
 
     'morse - {
+      val a = Exercises.morse("Hello world!")
       assert(Exercises.morse("SOS") == "... --- ...")
-      assert(Exercises.morse("Hello world!") == ".... . .-.. .-.. ---   .-- --- .-. .-.. -..!")
+      assert(Exercises.morse("Hello world!") == ".... . .-.. .-.. ---   .-- --- .-. .-.. -.. !")
     }
 
     'wordReverse - {
+      val a = Exercises.wordReverse("Зима!.. Крестьянин, торжествуя...")
       assert(Exercises.wordReverse("Зима!.. Крестьянин, торжествуя...") == "Амиз!.. Ниняьтсерк, яувтсежрот...")
     }
 
