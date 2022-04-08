@@ -19,7 +19,7 @@ object Exercises {
     def feed(food: Food[A]): List[String] = animals.map(food.feed)
   }
 
-  trait Food[T <: Animal] {
+  trait Food[-T <: Animal] {
     val name: String
 
     def feed(animal: T): String = s"${animal.name} eats $name"
