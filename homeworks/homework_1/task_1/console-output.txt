@@ -1,0 +1,42 @@
+"C:\Program Files\Java\jdk-16.0.1\bin\java.exe" -Djline.terminal=NONE "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.3\lib\idea_rt.jar=60895:C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.3\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\КомиссаровАлексейЕвг\IdeaProjects\HomeworkTask1\out\production\HomeworkTask1;C:\Users\КомиссаровАлексейЕвг\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.8.jar;C:\Users\КомиссаровАлексейЕвг\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.13.8.jar;C:\Users\КомиссаровАлексейЕвг\.ivy2\cache\org.scala-lang\scala-library\srcs\scala-library-2.13.8-sources.jar;C:\Users\КомиссаровАлексейЕвг\.ivy2\cache\org.scala-lang\scala-compiler\jars\scala-compiler-2.13.8.jar;C:\Users\КомиссаровАлексейЕвг\AppData\Roaming\JetBrains\IntelliJIdea2021.1\plugins\Scala\lib\runners.jar scala.tools.nsc.MainGenericRunner -usejavacp -Xjline:off
+Welcome to Scala 2.13.8 (Java HotSpot(TM) 64-Bit Server VM, Java 16.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> val greet = "Hello Scala! This is Alexey"
+val greet: String = Hello Scala! This is Alexey
+
+scala> val greet = "Hello Scala! This is Alexey"
+val greet: String = Hello Scala! This is Alexey
+
+scala> val greet = "Hello Scala! This is Alexey"; println(greet)
+Hello Scala! This is Alexey
+val greet: String = Hello Scala! This is Alexey
+
+scala> var greetDe = "Guten Tag! Das ist Alexey"; println(greetDe)
+Hello Scala! Das ist Alexey
+var greetDe: String = Guten Tag! Das ist Alexey
+
+scala> var greetRu = "Privjet Scala! Eto yest Alexey"; println(greetRu)
+Privjet Scala! Eto yest Alexey
+var greetRu: String = Privjet Scala! Eto yest Alexey
+
+scala> var greetReverse = "olleH alacS! sihT si yexelA vorassimoK"
+var greetReverse: String = olleH alacS! sihT si yexelA vorassimoK
+
+scala> println(greetReverse)
+olleH alacS! sihT si yexelA vorassimoK
+
+scala> greetDe1 = "Guten Tag! Das ist Yexela Vorassimok"
+       ^
+       error: not found: value greetDe1
+
+scala> val greetDe1 = "Guten Tag! Das ist Yexela Vorassimok"
+val greetDe1: String = Guten Tag! Das ist Yexela Vorassimok
+
+scala> print(greetDe1)
+Guten Tag! Das ist Yexela Vorassimok
+scala> val greetRu1 = "Privjet Scala! Eto est Yexela Vorassimok"
+val greetRu1: String = Privjet Scala! Eto est Yexela Vorassimok
+
+scala> print(greetRu1)
+Privjet Scala! Eto est Yexela Vorassimok
