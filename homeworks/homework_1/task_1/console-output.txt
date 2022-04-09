@@ -1,0 +1,28 @@
+C:\Users\Пользователь\Рабочий стол\naumen.scala>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 14.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val greeting = "Hello Scala! This is Semke Daniil"
+greeting: String = Hello Scala! This is Semke Daniil
+
+scala> println(greeting);
+Hello Scala! This is Semke Daniil
+
+scala> val holaGreeting = "Hola, Scala! This is Semke Daniil"; println(holaGreeting);
+Hola, Scala! This is Semke Daniil
+holaGreeting: String = Hola, Scala! This is Semke Daniil
+
+scala> val gutenGreeting = "Guten tag, Scala! This is Semke Daniil"; println(gutenGreeting);
+Guten tag, Scala! This is Semke Daniil
+gutenGreeting: String = Guten tag, Scala! This is Semke Daniil
+
+scala> println(greeting.reverse)
+liinaD ekmeS si sihT !alacS olleH
+
+scala> println(holaGreeting.reverse)
+liinaD ekmeS si sihT !alacS ,aloH
+
+scala> println(gutenGreeting.reverse)
+liinaD ekmeS si sihT !alacS ,gat netuG
+
+scala>
