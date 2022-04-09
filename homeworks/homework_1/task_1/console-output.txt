@@ -1,0 +1,41 @@
+C:\Users\User>scala
+Welcome to Scala 2.13.8 (Java HotSpot(TM) 64-Bit Server VM, Java 17.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val greetings = "Hello"
+val greetings: String = Hello
+
+scala> val fullName = "Alexander Shamala"
+val fullName: String = Alexander Shamala
+
+scala> def hello(greetings: String, fullName: String) = println(s"$greetings Scala! This is $fullName")
+def hello(greetings: String, fullName: String): Unit
+
+scala> hello(greetings, fullName)
+Hello Scala! This is Alexander Shamala
+
+scala> val greetings2 = "Hola"
+val greetings2: String = Hola
+
+scala> val greetings3 = "Guten tag"
+val greetings3: String = Guten tag
+
+scala> hello(greetings2, fullName)
+Hola Scala! This is Alexander Shamala
+
+scala> hello(greetings3, fullName)
+Guten tag Scala! This is Alexander Shamala
+
+scala> val fullNameReversed = fullName.reverse
+val fullNameReversed: String = alamahS rednaxelA
+
+scala> hello(greetings, fullNameReversed)
+Hello Scala! This is alamahS rednaxelA
+
+scala> hello(greetings2, fullNameReversed)
+Hola Scala! This is alamahS rednaxelA
+
+scala> hello(greetings3, fullNameReversed)
+Guten tag Scala! This is alamahS rednaxelA
+
+scala>
