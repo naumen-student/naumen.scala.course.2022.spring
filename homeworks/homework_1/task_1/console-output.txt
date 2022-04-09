@@ -1,0 +1,35 @@
+PS C:\Users\Alena> scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) Client VM, Java 1.8.0_321).
+Type in expressions for evaluation. Or try :help.
+
+scala> def formatHello (hello: String, name: String) : String = s"$hello Scala! This is $name"
+formatHello: (hello: String, name: String)String
+
+scala> def printHello (hellos: Array[String], name: String)
+     |   {
+     |     for(hello <- hellos) println(formatHello(hello:  String, name: String))
+     |   }
+printHello: (hellos: Array[String], name: String)Unit
+
+scala> def run()
+     |   {
+     |     val person = "Mazyrina Alena"
+     |     val hellos = Array("Hello", "Hola", "Guten Tag", "Szia", "Ohayo")
+     |     printHello(hellos: Array[String], person: String)
+     |     printHello(hellos: Array[String], person.reverse: String)
+     |   }
+run: ()Unit
+
+scala> run()
+Hello Scala! This is Mazyrina Alena
+Hola Scala! This is Mazyrina Alena
+Guten Tag Scala! This is Mazyrina Alena
+Szia Scala! This is Mazyrina Alena
+Ohayo Scala! This is Mazyrina Alena
+Hello Scala! This is anelA aniryzaM
+Hola Scala! This is anelA aniryzaM
+Guten Tag Scala! This is anelA aniryzaM
+Szia Scala! This is anelA aniryzaM
+Ohayo Scala! This is anelA aniryzaM
+
+scala>
