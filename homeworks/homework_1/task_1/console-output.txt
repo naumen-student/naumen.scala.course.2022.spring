@@ -1,0 +1,47 @@
+"C:\Users\Вова Тиунов\.jdks\openjdk-14.0.2\bin\java.exe" -Djline.terminal=NONE "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2\lib\idea_rt.jar=55471:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2\bin" -Dfile.encoding=UTF-8 -classpath "C:\Users\Вова Тиунов\IdeaProjects\example_training\target\scala-2.13\classes;C:\Users\Вова Тиунов\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.6\scala-library-2.13.6.jar;C:\Users\Вова Тиунов\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\net\java\dev\jna\jna\5.3.1\jna-5.3.1.jar;C:\Users\Вова Тиунов\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\jline\jline\3.19.0\jline-3.19.0.jar;C:\Users\Вова Тиунов\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-compiler\2.13.6\scala-compiler-2.13.6.jar;C:\Users\Вова Тиунов\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.13.6\scala-reflect-2.13.6.jar;C:\Users\Вова Тиунов\AppData\Roaming\JetBrains\IdeaIC2020.2\plugins\Scala\lib\runners.jar" scala.tools.nsc.MainGenericRunner -usejavacp -Xjline:off
+Welcome to Scala 2.13.6 (OpenJDK 64-Bit Server VM, Java 14.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Vladimir Tiunov"
+val name: String = Vladimir Tiunov
+
+scala> val greet = s"Hello Scala! This is $name"
+val greet: String = Hello Scala! This is Vladimir Tiunov
+
+scala> println(greet)
+Hello Scala! This is Vladimir Tiunov
+
+scala> val newGreet = greet.replaceFirst("Hello", "Hola")
+val newGreet: String = Hola Scala! This is Vladimir Tiunov
+
+scala> println(newGreet)
+Hola Scala! This is Vladimir Tiunov
+
+scala> val secNewGreet = greet.replaceFirst("Hello", "Guten tag")
+val secNewGreet: String = Guten tag Scala! This is Vladimir Tiunov
+
+scala> println(secNewGreet)
+Guten tag Scala! This is Vladimir Tiunov
+
+scala> def funGreet(name: String) = s"Hello Scala! This is $name"
+def funGreet(name: String): String
+
+scala> val revGreet = funGreet(name.reverse)
+val revGreet: String = Hello Scala! This is vonuiT rimidalV
+
+scala> println(revGreet)
+Hello Scala! This is vonuiT rimidalV
+
+scala> val revNewGreet = funGreet(name.reverse).replaceAll("Hello", "Hola")
+val revNewGreet: String = Hola Scala! This is vonuiT rimidalV
+
+scala> val revSecNewGreet = funGreet(name.reverse).replaceAll("Hello", "Guten tag")
+val revSecNewGreet: String = Guten tag Scala! This is vonuiT rimidalV
+
+scala> println(revNewGreet)
+Hola Scala! This is vonuiT rimidalV
+
+scala> println(revSecNewGreet)
+Guten tag Scala! This is vonuiT rimidalV
+
+scala>
