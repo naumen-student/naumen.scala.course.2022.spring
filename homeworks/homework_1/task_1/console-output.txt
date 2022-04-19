@@ -1,0 +1,22 @@
+ ~  scala
+
+ scala> println("Hello Scala! This is Xenia!")
+ Hello Scala! This is Xenia!
+
+ scala> println("Yo Scala! This is Xenia!")
+ Yo Scala! This is Xenia!
+
+ scala> println("Halo Scala! This is Xenia!")
+ Halo Scala! This is Xenia!
+
+ scala> val name = "Xenia Evdokimova".reverse
+ val name: String = avomikodvE aineX
+
+ scala> println(s"Halo Scala! This is ${name}!")
+ Halo Scala! This is avomikodvE aineX!
+
+ scala> println(s"Yo Scala! This is ${name}!")
+ Yo Scala! This is avomikodvE aineX!
+
+ scala> println(s"Hello Scala! This is ${name}!")
+ Hello Scala! This is avomikodvE aineX!
