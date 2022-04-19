@@ -1,6 +1,4 @@
-package homework_3
-
-object Exercises {
+object Exercises extends App {
 
 
     /**
@@ -9,28 +7,54 @@ object Exercises {
      * Для всех типов кроме Boolean достаточно воспользоваться стандартной функцией .toString.
      * Для типа Boolean сделайте особое преобразование: true -> "правда", false -> "ложь".
      *
-     * Реализуйте функцию тремя разными способами, отличающимися тем, как определяется какой тип имеет значение переданное в аргументе. 
+     * Реализуйте функцию тремя разными способами, отличающимися тем, как определяется какой тип имеет значение переданное в аргументе.
      * Определение типа необходимо для реализации специальной логики работы с Boolean значениями, которая описана в условии выше.
      */
-    def prettyBooleanFormatter1(x: Any): String = ???
+    def prettyBooleanFormatter1(x: Any): String = x match {
+        case true => "правда"
+        case false => "ложь"
+        case _ => x.toString
+    }
 
-    def prettyBooleanFormatter2(x: Any): String = ???
 
-    def prettyBooleanFormatter3(x: Any): String = ???
+    def prettyBooleanFormatter2(x: Any): String = x match {
+        case x: Boolean => if (x) "правда" else "ложь"
+        case _ => x.toString
+    }
+
+
+    def prettyBooleanFormatter3(x: Any): String = {
+        if (x.isInstanceOf[Boolean]) {
+            if (x == true) "правда" else "ложь"
+        } else
+            x.toString
+    }
+
+
 
 
     /**
      * Задание №2
      * Реализуйте функцию нахождения максимального числа в переданной коллекции интов (можно использовать все методы стандартной библиотеки).
      *
-     * Реализуйте функцию тремя разными способами, отличающимися тем как функция себя ведет на пустой коллекции. 
+     * Реализуйте функцию тремя разными способами, отличающимися тем как функция себя ведет на пустой коллекции.
      * Обратите внимание на возвращаемые типы.
      */
-    def max1(xs: Seq[Int]): Int = ???
+    // отдает -1 на пустой
+    def max1(xs: Seq[Int]): Int = xs.isEmpty match {
+        case false => xs.max
+        case _ => -1
+    }
 
-    def max2(xs: Seq[Int]): Seq[Int] = ???
+    // отдает пустую на пустой
+    def max2(xs: Seq[Int]): Seq[Int] = xs.isEmpty match {
+        case false => Seq(xs.max)
+        case _ => Seq()
+    }
 
-    def max3(xs: Seq[Int]): Option[Int] = ???
+    // отдает None
+    def max3(xs: Seq[Int]): Option[Int] = xs.reduceOption(_ max _)
+
 
     /**
      * Задание №3
@@ -41,9 +65,13 @@ object Exercises {
     /**
      * Реализуйте на основе нее 3 варианта суммирования 2х чисел, отличающиеся способом передачи этих 2х чисел в функцию sumIntegers.
      * Как минимум одна из реализаций должна использовать тип данных (класс) написанный вами самостоятельно.
-     */ 
-    def sum1(x: Int, y: Int): Int = sumIntegers(???)
-    def sum2(x: Int, y: Int): Int = sumIntegers(???)
-    def sum3(x: Int, y: Int): Int = sumIntegers(???)
+     */
+    def sum1(x: Int, y: Int): Int = sumIntegers(Vector(x, y))
+    def sum2(x: Int, y: Int): Int = sumIntegers(Set(x, y))
+    def sum3(x: Int, y: Int): Int = sumIntegers(MyIterable(List(x, y)))
+
+    case class MyIterable[Int](xs: List[Int]) extends Iterable[Int] {
+        override def iterator: Iterator[Int] = xs.iterator
+    }
 
 }
