@@ -21,15 +21,15 @@ class StringCell(str: String) extends Cell {
 }
 
 class ReferenceCell(ix: Int, iy: Int, table: Table) extends Cell {
-  def getTable(): Table = {
+  private def getTable(): Table = {
     table
   }
 
-  def getIX(): Int = {
+  private def getIX(): Int = {
     ix
   }
 
-  def getIY(): Int = {
+  private def getIY(): Int = {
     iy
   }
 
