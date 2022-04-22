@@ -1,4 +1,5 @@
 import scala.util.{Failure, Success, Try}
+
 object Exercises {
 
   trait Read[T] {
