@@ -15,15 +15,13 @@ object Exercises {
   }
 
   implicit def intRead: Read[Int] = new Read[Int] {
-    override def read(x: String): Either[String, Int] = {
-      toInt(x) match {
-        case Success(x) => Right(x);
-        case Failure(_) => Left(x);
-      }
+    override def read(x: String): Either[String, Int] = toInt(x) match {
+      case Success(x) => Right(x);
+      case Failure(_) => Left(x);
     }
   }
 
-  val pattern: Regex = "Some\\((.+)\\)".r;
+  private val pattern: Regex = "Some\\((.+)\\)".r;
 
   implicit def optionRead[T: Read]: Read[Option[T]] = new Read[Option[T]] {
     override def read(value: String): Either[String, Option[T]] = {
