@@ -8,4 +8,5 @@ object DataList {
     case head :: tail => NonEmptyList(head, apply(tail: _*))
     case _ => EmptyList
   }
+
 }

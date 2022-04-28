@@ -4,6 +4,7 @@ import matchers._
 
 class Test extends AnyFlatSpec with should.Matchers {
 
+  val dlst:DataList[Int] = DataList(1,2)
   "foldOption" should "return None on empty list" in {
     ListOps.foldOption[Any](_ == _)(DataList.EmptyList) should be (None)
   }
