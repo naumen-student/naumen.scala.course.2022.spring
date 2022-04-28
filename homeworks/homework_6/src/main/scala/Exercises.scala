@@ -1,7 +1,8 @@
+import scala.annotation.tailrec
+import scala.util.matching.Regex
+
 object Exercises {
-
-
-  def reverse[T](seq: Seq[T]): Seq[T] = ???
+  def reverse[T](seq: Seq[T]): Seq[T] = seq.reverse
 
   /**
    * https://ru.wikipedia.org/wiki/Числа_Фибоначчи
@@ -9,9 +10,23 @@ object Exercises {
    * @param idx
    * @return
    */
-  def fibonacci4Index(idx: Int): Int = ???
 
-  def fibonacci(idx: Int): Seq[Int] = ???
+  def fibonacci4Index(idx: Int): Int = fibonacciHelper(idx, 0, 1)
+
+  def fibonacci(idx: Int): Seq[Int] = idx match
+  {
+    case 0 => Seq(0)
+    case 1 => Seq(0, 1)
+    case _ => fibonacci(idx - 1) :+ fibonacci4Index(idx)
+  }
+
+  @tailrec
+  def fibonacciHelper(idx: Int, a: Int, b: Int): Int = idx match
+    {
+    case 0 => 0
+    case 1 => b
+    case _ => fibonacciHelper(idx - 1, b, a+b)
+    }
 
   lazy val MORSE = Map("A" -> ".-", "B" -> "-...", "C" -> "-.-.", "D" -> "-..", "E" -> ".", "F" -> "..-.",
                        "G" -> "--.", "H" -> "....", "I" -> "..", "J" -> ".---", "K" -> "-.-", "L" -> ".-..",
@@ -19,9 +34,11 @@ object Exercises {
                        "S" -> "...", "T" -> "-", "U" -> "..-", "V" -> "...-", "W" -> ".--", "X" -> "-..-",
                        "Y" -> "-.--", "Z" -> "--..")
 
-  def morse(text: String): String = ???
+  def morse(text: String): String = text.map(c => MORSE.getOrElse(c.toString.toUpperCase, c)).mkString(" ")
 
-
-  def wordReverse(text: String): String = ???
-
+  def wordReverse(text: String): String = new Regex("\\pL+").replaceAllIn(text, w =>
+    {
+      val reversed = w.toString().reverse
+      if(reversed.last.isUpper) reversed.toLowerCase.capitalize else reversed
+    })
 }
