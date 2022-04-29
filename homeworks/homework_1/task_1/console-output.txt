@@ -1,0 +1,40 @@
+Last login: Wed Mar  2 13:54:26 on ttys000
+tamaramezenova@MacBook-Air-Tamara ~ % sbt console
+[info] welcome to sbt 1.6.2 (Homebrew Java 17.0.2)
+[info] loading project definition from /Users/tamaramezenova/project
+[info] set current project to tamaramezenova (in build file:/Users/tamaramezenova/)
+[info] Starting scala interpreter...
+Welcome to Scala 2.12.15 (OpenJDK 64-Bit Server VM, Java 17.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = "Hello, Scala! This is Tamara Mezenova"
+a: String = Hello, Scala! This is Tamara Mezenova
+
+scala> println(a)
+Hello, Scala! This is Tamara Mezenova
+
+scala> val b = "Hola, Scala! This is Tamara Mezenova"
+b: String = Hola, Scala! This is Tamara Mezenova
+
+scala> println(b)
+Hola, Scala! This is Tamara Mezenova
+
+scala> val c = "Guten tag, Scala! This is Tamara Mezenova"
+c: String = Guten tag, Scala! This is Tamara Mezenova
+
+scala> println(c)
+Guten tag, Scala! This is Tamara Mezenova
+
+scala> val greetings = Array("Hello, Scala! This is avonezeM aramaT", "Hola, Scala! This is avonezeM aramaT", "Guten tag, Scala! This is avonezeM aramaT")
+greetings: Array[String] = Array(Hello, Scala! This is avonezeM aramaT, Hola, Scala! This is avonezeM aramaT, Guten tag, Scala! This is avonezeM aramaT)
+
+scala> println(greetings(0))
+Hello, Scala! This is avonezeM aramaT
+
+scala> println(greetings(1))
+Hola, Scala! This is avonezeM aramaT
+
+scala> println(greetings(2))
+Guten tag, Scala! This is avonezeM aramaT
+
+scala> 
