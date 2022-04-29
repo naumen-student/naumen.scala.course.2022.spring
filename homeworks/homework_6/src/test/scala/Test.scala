@@ -1,9 +1,9 @@
 import utest._
 
 
-object Test extends TestSuite{
+object Test extends TestSuite {
 
-  val tests = Tests{
+  val tests = Tests {
     'reverse - {
       assert(Exercises.reverse(Seq(1, 2, 3)) == Seq(3, 2, 1))
       assert(Exercises.reverse(Seq(-1, -2, -3)) == Seq(-3, -2, -1))
@@ -19,9 +19,9 @@ object Test extends TestSuite{
       assert(Exercises.fibonacci(5) == Seq(0, 1, 1, 2, 3, 5))
     }
 
-    'morse - {
+    'morse - { //последний assert не соответсвует условию - нелатинскую букву '!' следует оставить без изменений отделив пробелом
       assert(Exercises.morse("SOS") == "... --- ...")
-      assert(Exercises.morse("Hello world!") == ".... . .-.. .-.. ---   .-- --- .-. .-.. -..!")
+      assert(Exercises.morse("Hello world!") == ".... . .-.. .-.. ---   .-- --- .-. .-.. -.. !")
     }
 
     'wordReverse - {
