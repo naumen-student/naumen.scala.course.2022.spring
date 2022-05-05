@@ -6,6 +6,7 @@ class Test extends AnyFlatSpec with should.Matchers {
 
   "foldOption" should "return None on empty list" in {
     ListOps.foldOption[Any](_ == _)(DataList.EmptyList) should be (None)
+    List(1,2,3).foldLeft(0)(_ + _)
   }
 
   "foldOption" should "work correct on non empty list" in {
