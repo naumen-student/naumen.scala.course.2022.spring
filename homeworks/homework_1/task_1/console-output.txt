@@ -1,0 +1,27 @@
+C:\Users\79530>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 1.8.0_292).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = " Scala! This is "
+a: String = " Scala! This is "
+
+scala> val b = "Hello"
+b: String = Hello
+
+scala> val c = "Hola"
+c: String = Hola
+
+scala> val name = "Anzhelika Kotovich"
+name: String = Anzhelika Kotovich
+
+scala> println (b + a + name)
+Hello Scala! This is Anzhelika Kotovich
+
+scala> println (c + a + name)
+Hola Scala! This is Anzhelika Kotovich
+
+scala> println (c + a + name.reverse)
+Hola Scala! This is hcivotoK akilehznA
+
+scala> println (b + a + name.reverse)
+Hello Scala! This is hcivotoK akilehznA
